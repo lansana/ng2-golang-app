@@ -1,0 +1,66 @@
+.title {
+  font-family: 'Great Vibes', 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  padding: 40px 10px 10px;
+}
+
+.navbar-default {
+  background: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .navbar-default {
+    border: none;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: #ddd;
+  }
+
+  .navbar-nav {
+    display: block;
+    margin: auto;
+    float: none;
+    text-align: center;
+  }
+
+  .navbar-nav li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 35px;
+    padding-top: 15px;
+  }
+
+  .navbar-default {
+    background: #fff;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    text-align: center;
+  }
+
+  .navbar-toggle {
+    float: none;
+    display: block;
+    margin: 8px auto;
+    background: #fff;
+    border-color: #a4c171;
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: #a4c171;
+  }
+}
