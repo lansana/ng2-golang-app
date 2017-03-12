@@ -14,5 +14,5 @@ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 sudo apt-get install git
 
 # Configure Git
-git config --global user.name "lansana"
+git config --global user.name "Lansana Camara"
 git config --global user.email "lxc5296@gmail.com"
