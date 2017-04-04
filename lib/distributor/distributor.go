@@ -34,6 +34,7 @@ const (
 var (
 	currConnections int32 = 0
 	maxConnections  int32 = 4096
+	busy = false
 )
 
 type AttackConfig struct {
@@ -68,11 +69,19 @@ func Attack(cfg *AttackConfig) {
 	go attack(cfg)
 }
 
+func InProgress() bool {
+	return busy
+}
+
 func attack(cfg *AttackConfig) {
+	busy = true
+
+	// Check if URL contains protocol, if not add it
 	if !strings.Contains(cfg.URL, "http://") && !strings.Contains(cfg.URL, "https://") {
 		cfg.URL = "http://" + cfg.URL
 	}
 
+	// Parse URL to *url.URL type to access information such as host
 	u, err := url.Parse(cfg.URL)
 	if err != nil {
 		fmt.Printf("Error parsing URL: %v", cfg.URL)
@@ -80,10 +89,16 @@ func attack(cfg *AttackConfig) {
 	}
 	cfg.parsedUrl = u
 
+	// Allocate memory for attackResponse pointer
 	ar := new(attackResponse)
+
+	// Make channel with buffer of size 8
 	ch := make(chan uint8, 8)
+
+	// Define errors counter
 	var errors int32
 
+	// Asynchronously run duration timer, and send signal to channel when done
 	go func() {
 		time.Sleep(cfg.Duration * time.Second)
 		ch <- CALL_TIME_RAN_OUT
