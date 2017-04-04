@@ -6,7 +6,7 @@ import { CountService } from './count.service';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class CountResolver implements Resolve<any> {
+export class CountResolver implements Resolve<Observable<any>> {
   constructor(private countService: CountService) {}
 
   resolve(): Observable<any> {
