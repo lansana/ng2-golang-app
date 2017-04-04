@@ -1,0 +1,13 @@
+<div class="widget-container"
+     [ngClass]="{
+     'widget-container--small': size === 'small' || size === 'sm',
+     'widget-container--medium': size === 'medium' || size === 'md',
+     'widget-container--large': size === 'large' || size === 'lg',
+     'widget-container--full': size === 'full',
+     'widget-container--center': position === 'center',
+     'widget-container--barebones': barebones === true
+     }">
+  <div class="widget-inner">
+    <ng-content></ng-content>
+  </div>
+</div>

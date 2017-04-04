@@ -1,0 +1,71 @@
+@import './colors';
+
+@mixin ring($color) {
+  @include box-shadow(0 0 0 2px $white, 0 0 0 4px lighten($color, 15%));
+}
+
+@mixin box-shadow($shadows...) {
+  @if $shadows {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+  }
+}
+
+@mixin border-radius($radius) {
+  @if $radius {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
+}
+
+@mixin transition($transitions...) {
+  @if $transitions {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    transition: $transitions;
+  }
+}
+
+@mixin transform($transformations...) {
+  @if $transformations {
+    -webkit-transform: $transformations;
+    -moz-transform: $transformations;
+    -ms-transform: $transformations;
+    -o-transform: $transformations;
+    transform: $transformations;
+  }
+}
+
+@mixin backface-visibility($visibility) {
+  @if $visibility {
+    -webkit-backface-visibility: $visibility;
+    -moz-backface-visibility: $visibility;
+    backface-visibility: $visibility;
+  }
+}
+
+@mixin animation-timing-function($function) {
+  @if $function {
+    -webkit-animation-timing-function: $function;
+    -moz-animation-timing-function: $function;
+    animation-timing-function: $function;
+  }
+}
+
+@mixin animation-duration($duration) {
+  @if $duration {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    animation-duration: $duration;
+  }
+}
+
+@mixin animation-name($name) {
+  @if $name {
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    animation-name: $name;
+  }
+}

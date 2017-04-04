@@ -1,0 +1,60 @@
+// Partials
+@import './partials/mixins';
+@import './partials/colors';
+@import './partials/typography';
+
+// Components
+@import './components/chatty/chatty';
+@import './components/buttons/buttons';
+
+body {
+  font-family: 'Open Sans', Arial, Verdana, sans-serif;
+  padding-top: 50px;
+  background-color: lighten($light-gray, 2.75%);
+  color: $dark-blue;
+}
+
+h1, h2, h3, h4, h5, h6, p, strong, small, span, label {
+  color: $light-black;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: lighter;
+
+  &.subtext {
+    font-size: 16px;
+  }
+}
+
+a {
+  @include transition(color .15s ease-in-out);
+  color: $blue;
+
+  &:hover, &:active {
+    color: darken($blue, 25%);
+  }
+}
+
+.form-control {
+  @include transition(border-color .15s ease-in-out, background-color .15s ease-in-out);
+  @include border-radius(4px);
+  @include box-shadow(none !important);
+  height: 40px;
+  border-color: lighten($light-gray, 2.75%);
+  background-color: lighten($light-gray, 2.75%);
+
+  &:hover, &:focus {
+    border-color: $blue;
+    background-color: $white;
+  }
+}
+
+label > input {
+  position: relative;
+  top: 2px;
+}

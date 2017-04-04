@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <div *ngIf="count !== 0">
+        <h1 class="count">{{count}}</h1>
+        <div *ngIf="count > 1">
+          <p class="subtext">Users currently online</p>
+        </div>
+        <div *ngIf="count === 1">
+          <p class="subtext">User currently online</p>
+        </div>
+      </div>
+      <div *ngIf="count === 0">
+        <p class="subtext">No users online</p>
+      </div>
+    </div>
+  </div>
+</div>

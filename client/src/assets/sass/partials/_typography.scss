@@ -1,0 +1,10 @@
+@import './colors';
+
+.color {
+  &.color--dark-blue {
+    color: $dark-blue;
+  }
+  &.color--blue {
+    color: $blue;
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.navbar {
+  background-color: $white;
+  border-color: $light-gray;
+
+  .navbar-brand {
+    color: $blue;
+
+    &:hover, &:active {
+      color: darken($blue, 15%);
+    }
+  }
+
+  a {
+    @include transition(color .15s ease-in-out);
+    color: $dark-blue;
+    font-weight: 700;
+
+    &:hover, &:active, &.active {
+      color: $blue;
+    }
+  }
+
+  .navbar-toggle {
+    background-color: $blue;
+    border-color: $blue;
+  }
+
+  .navbar-collapse {
+    border: none;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.scrollbox {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 25px;
+
+  &::-webkit-scrollbar-track
+  {
+    @include border-radius(25px);
+    background-color: lighten($light-gray, 2.75%);
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: $light-gray;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    @include border-radius(25px);
+    background-color: lighten($light-black, 70%);
+
+    &:hover {
+      background-color: lighten($light-black, 60%);
+    }
+    &:active {
+      background-color: lighten($light-black, 50%);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.loading-bar-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031; // 1 more than 1030, which is z-index of navbar
+  height: auto;
+  background: transparent;
+
+  .loading-bar {
+    @include transition(width .15s ease-in-out, opacity .15s ease);
+    @include box-shadow(0 0 10px darken($blue, 10%));
+    width: 0;
+    position: relative;
+  }
+}

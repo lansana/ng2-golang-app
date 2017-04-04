@@ -1,0 +1,74 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Lansana\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'bower' ]
+2 info using npm@3.10.9
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData bower
+8 silly fetchNamedPackageData bower
+9 silly mapToRegistry name bower
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'bower',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'bower',
+12 silly mapToRegistry   name: 'bower',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/bower
+14 verbose request uri https://registry.npmjs.org/bower
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 5:34:37 PM
+17 verbose request using bearer token for auth
+18 verbose request id 0230a43930f424d8
+19 http request GET https://registry.npmjs.org/bower
+20 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+21 info attempt registry request try #2 at 5:34:59 PM
+22 verbose request using bearer token for auth
+23 http request GET https://registry.npmjs.org/bower
+24 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+25 info attempt registry request try #3 at 5:36:10 PM
+26 verbose request using bearer token for auth
+27 http request GET https://registry.npmjs.org/bower
+28 silly fetchPackageMetaData Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+28 silly fetchPackageMetaData     at errnoException (dns.js:28:10)
+28 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+28 silly fetchPackageMetaData  error for bower { Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+28 silly fetchPackageMetaData     at errnoException (dns.js:28:10)
+28 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+28 silly fetchPackageMetaData   code: 'ENOTFOUND',
+28 silly fetchPackageMetaData   errno: 'ENOTFOUND',
+28 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+28 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+28 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+28 silly fetchPackageMetaData   port: 443 }
+29 silly rollbackFailedOptional Starting
+30 silly rollbackFailedOptional Finishing
+31 silly runTopLevelLifecycles Finishing
+32 silly install printInstalled
+33 verbose stack Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+33 verbose stack     at errnoException (dns.js:28:10)
+33 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+34 verbose cwd c:\Projects\Go\src\ddos\client
+35 error Windows_NT 10.0.14393
+36 error argv "c:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Lansana\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "bower"
+37 error node v6.9.1
+38 error npm  v3.10.9
+39 error code ENOTFOUND
+40 error errno ENOTFOUND
+41 error syscall getaddrinfo
+42 error network getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+43 error network This is most likely not a problem with npm itself
+43 error network and is related to network connectivity.
+43 error network In most cases you are behind a proxy or have bad network settings.
+43 error network
+43 error network If you are behind a proxy, please make sure that the
+43 error network 'proxy' config is set properly.  See: 'npm help config'
+44 verbose exit [ 1, true ]

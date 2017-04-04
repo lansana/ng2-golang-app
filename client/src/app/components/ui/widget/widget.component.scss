@@ -1,0 +1,36 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.widget-container {
+  @include border-radius(4px);
+  @include transition(height .15s ease-in-out);
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 15px 0;
+
+  &:not(.widget-container--barebones) {
+    background-color: $white;
+    border: 1px solid $light-gray;
+  }
+  &.widget-container--small {
+    max-width: 450px;
+  }
+  &.widget-container--medium {
+    max-width: 600px;
+  }
+  &.widget-container--large {
+    max-width: 750px;
+  }
+  &.widget-container--full {
+    width: 100%;
+  }
+  &.widget-container--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.widget-inner {
+  padding: 25px;
+}

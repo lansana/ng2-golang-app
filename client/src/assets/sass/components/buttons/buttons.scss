@@ -1,0 +1,54 @@
+@import '../../partials/colors';
+@import '../../partials/mixins';
+
+.btn {
+  @include border-radius(4px);
+  @include transition(border-color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .05s ease-in-out);
+  height: 40px;
+  font-weight: bold;
+  color: $white;
+  outline: none !important;
+  border-width: 2px;
+
+  &.btn-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.btn-sm {
+    height: 30px;
+    padding: 3px 8px;
+  }
+}
+
+.btn.btn-primary {
+  background-color: $blue;
+  border-color: $blue;
+
+  &.btn-primary--inverse {
+    background-color: $white;
+    border-color: lighten($blue, 30%);
+    color: $blue;
+
+    &:hover, &:active {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+
+    &:active {
+      @include ring($blue);
+    }
+  }
+  &:not(.btn-primary--inverse) {
+    &:hover, &:active {
+      background-color: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+    }
+
+    &:active {
+      @include ring($blue);
+    }
+  }
+}

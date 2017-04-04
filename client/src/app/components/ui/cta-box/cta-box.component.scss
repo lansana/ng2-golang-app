@@ -1,0 +1,45 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.cta-box {
+  @include border-radius(4px);
+  @include transition(border .1s ease-in-out, transform .1s ease-in-out, box-shadow .1s ease-in-out);
+  border: 2px solid lighten($blue, 38%);
+  background-color: #fff;
+  width: 160px;
+  height: 90px;
+  text-decoration: none !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  &.inline {
+    display: inline-block;
+  }
+  &:not(.inline) {
+    display: block;
+  }
+
+  &:hover {
+    @include transform(rotate(-1deg) scale(1.035));
+    @include box-shadow(1px 2px 25px lighten($black, 80%));
+    border-color: $blue;
+  }
+
+  .cta-icon-wrapper, .cta-text {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+  }
+
+  .icon {
+    line-height: 30px;
+    font-size: 25px !important;
+    color: $blue;
+  }
+
+  .cta-text {
+    color: $blue;
+    font-weight: bold;
+  }
+}

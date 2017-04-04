@@ -1,0 +1,44 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.chat-bubble {
+  @include border-radius(25px);
+  position: relative;
+  padding: 8px 16px;
+  background: $blue;
+  float: right;
+  display: block;
+  margin-bottom: 10px;
+  max-width: 100%;
+
+  p {
+    margin: 0;
+    color: $white;
+    font-weight: normal;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -2px;
+    right: -7px;
+    height: 20px;
+    border-right: 20px solid $blue;
+    border-bottom-left-radius: 16px 14px;
+    @include transform(translate(0, -2px));
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -2px;
+    right: -56px;
+    width: 26px;
+    height: 20px;
+    background: $white;
+    border-bottom-left-radius: 10px;
+    @include transform(translate(-30px, -2px));
+  }
+}

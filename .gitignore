@@ -1,8 +1,8 @@
 # compiled output
-/frontend/dist
+/client/dist
 
 # dependencies
-/frontend/node_modules
+/client/node_modules
 
 # IDEs and editors
 /.idea
