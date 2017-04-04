@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class CountService {
-  url = 'http://localhost:80/api/count';
+  uri = "http://" + window.location.hostname + "/api/count";
 
   constructor(private httpService: HttpService) {}
 
   getCount(): Observable<any> {
-    return this.httpService.get(this.url);
+    return this.httpService.get(this.uri);
   }
 }
