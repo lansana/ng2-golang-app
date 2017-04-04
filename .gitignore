@@ -3,6 +3,7 @@
 
 # dependencies
 /client/node_modules
+/client/bower_components
 
 # IDEs and editors
 /.idea
