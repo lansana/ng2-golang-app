@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  web:
+    image: redacted.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
+    ports:
+      - 80:80
+    container_name: angular2-golang-chat-room
