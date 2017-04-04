@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpService } from '../../../shared/service/http/http.service';
+import { environment } from "../../../../environments/environment";
 
 import { Observable } from 'rxjs';
 
@@ -9,6 +10,6 @@ export class CountService {
   constructor(private httpService: HttpService) {}
 
   getCount(): Observable<any> {
-    return this.httpService.get(HttpService.getFullUrl() + "/api/count");
+    return this.httpService.get(environment.server_url + "/api/count");
   }
 }
