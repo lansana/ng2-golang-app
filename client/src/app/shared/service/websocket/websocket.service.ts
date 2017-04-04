@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 
+import { environment } from "../../../../environments/environment";
+
 @Injectable()
 export class WebSocketService {
   public socket = null;
-  private uri = "ws://" + window.location.hostname + ":80/ws";
 
   makeConnection(): void {
     window.onload = () => {
-      this.socket = new WebSocket(this.uri);
+      this.socket = new WebSocket(environment.websocket_url);
 
       this.socket.onopen = function (e) {
         console.log(`Connected to ${e.currentTarget.url}.`);
