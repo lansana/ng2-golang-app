@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'ui-navbar',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   title = "Angular2 Chat Room";
+
+  constructor(private titleService: Title) {}
+
+  setTitle(title: string): void {
+    this.titleService.setTitle(title);
+  }
 }
