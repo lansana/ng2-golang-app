@@ -1,8 +1,8 @@
 FROM golang:1.8
 
-ADD . $GOPATH/src/github.com/lansana/angular2-golang-chat-room
+ADD . $GOPATH/src/angular2-golang-chat-room
 
-WORKDIR $GOPATH/src/github.com/lansana/angular2-golang-chat-room
+WORKDIR $GOPATH/src/angular2-golang-chat-room
 
 RUN go install
 
