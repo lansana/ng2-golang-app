@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class WebSocketService {
   public socket = null;
-  private uri = "ws://localhost:80/ws";
+  private uri = "ws://" + window.location.hostname + ":80/ws";
 
   makeConnection(): void {
     window.onload = () => {
