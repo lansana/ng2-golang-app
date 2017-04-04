@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
-	"ddos/api/controller"
-	"ddos/lib/websocket"
+	"angular2-golang-chat-room/api/controller"
+	"angular2-golang-chat-room/lib/websocket"
 )
 
 // A map containing the routes that should be routed to index.html for

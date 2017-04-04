@@ -15,10 +15,10 @@ import (
 	"os"
 	"time"
 
-	w "ddos/lib/websocket"
-	"ddos/lib/unit"
+	w "angular2-golang-chat-room/lib/websocket"
+	"angular2-golang-chat-room/lib/unit"
 	"golang.org/x/net/websocket"
-	"ddos/lib/headers"
+	"angular2-golang-chat-room/lib/headers"
 )
 
 const (

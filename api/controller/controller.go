@@ -3,7 +3,7 @@ package controller
 import (
 	"time"
 
-	"ddos/lib/websocket"
+	"angular2-golang-chat-room/lib/websocket"
 	"github.com/gin-gonic/gin"
 )
 
