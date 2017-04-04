@@ -41,4 +41,12 @@ export class HttpService {
         this.loadingBarService.complete();
       });
   }
+
+  static getFullUrl(): string {
+    let protocol: string = window.location.protocol;
+    let host: string = window.location.hostname;
+    let port: string = window.location.port ? window.location.port : ":80";
+
+    return protocol + host + port;
+  }
 }
