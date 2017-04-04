@@ -28,9 +28,9 @@ import { IconComponent } from "./components/ui/icon/icon.component";
 import { LogoComponent } from "./components/ui/logo/logo.component";
 
 // Services
-import { WebSocketService } from './lib/service/websocket/websocket.service';
-import { NotificationService } from './lib/util/notification/notification.service';
-import { HttpService } from './lib/service/http/http.service';
+import { WebSocketService } from './shared/service/websocket/websocket.service';
+import { NotificationService } from './shared/util/notification/notification.service';
+import { HttpService } from './shared/service/http/http.service';
 import { CountService } from "./components/pages/count/count.service";
 import { LoadingBarService } from "./components/ui/loading-bar/loading-bar.service";
 
@@ -38,7 +38,7 @@ import { LoadingBarService } from "./components/ui/loading-bar/loading-bar.servi
 import { CountResolver } from "./components/pages/count/count.resolver";
 
 // Pipes
-import { FilterScriptsPipe } from "./lib/pipe/filter/filter-scripts.pipe";
+import { FilterScriptsPipe } from "./shared/pipe/filter/filter-scripts.pipe";
 
 @NgModule({
   imports: [

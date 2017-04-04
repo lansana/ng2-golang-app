@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { WebSocketService } from './lib/service/websocket/websocket.service';
+import { WebSocketService } from './shared/service/websocket/websocket.service';
 
 @Component({
   selector: 'app-root',

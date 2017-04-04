@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WebSocketService } from '../../../lib/service/websocket/websocket.service';
-import { NotificationService } from '../../../lib/util/notification/notification.service';
+import { WebSocketService } from '../../../shared/service/websocket/websocket.service';
+import { NotificationService } from '../../../shared/util/notification/notification.service';
 import { CountService } from "../count/count.service";
 
 @Component({
