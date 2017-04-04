@@ -13,7 +13,7 @@ var routes map[string]bool = map[string]bool{
 	"/": true,
 	"/attack": true,
 	"/chat-room": true,
-	"/count": true,
+	"/client-count": true,
 }
 
 func main() {
@@ -38,9 +38,12 @@ func main() {
 	r.LoadHTMLFiles("client/dist/index.html")
 
 	// API routes
-	r.GET("/api/count", func(c *gin.Context) {
-		controller.Count(c, hub)
+	r.GET("/api/client-count", func(c *gin.Context) {
+		controller.ClientCount(c, hub)
 	})
+	r.GET("/api/payload-file-size", controller.PayloadFileSize)
+	r.POST("/api/attack", controller.Attack)
+	r.POST("/api/receive-payload", controller.ReceivePayload)
 
 	// WebSocket route
 	r.GET("/ws", func(c *gin.Context) {
@@ -48,7 +51,7 @@ func main() {
 	})
 
 	// Run on port 80
-	r.Run(":80")
+	r.Run(":3000")
 }
 
 // Set up CORS to allow cross-origin requests
