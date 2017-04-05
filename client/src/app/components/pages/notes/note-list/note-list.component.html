@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngIf="notes">
+        <ui-widget [size]="'small'" [position]="'center'" [barebones]="true">
+          <div class="form-group">
+            <input type="text" class="form-control search" placeholder="Search notes"
+                   [(ngModel)]="search" (ngModelChange)="onChange($event)">
+          </div>
+          <div *ngFor="let note of notes" class="note" [routerLink]="['/notes', note.id]">
+            <ui-paper>
+              <div class="title">
+                {{note.title}}
+              </div>
+              <div class="description">
+                {{note.description | limit:true:50:"..."}}
+              </div>
+            </ui-paper>
+          </div>
+        </ui-widget>
+      </div>
+      <div *ngIf="!notes">
+        <ui-widget [size]="'small'" [barebones]="true" [position]="'center'">
+          <h3>No notes have been posted yet. :(</h3>
+        </ui-widget>
+      </div>
+    </div>
+  </div>
+</div>
