@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div *ngIf="notes">
+      <div *ngIf="notes.length > 0">
         <ui-widget [size]="'small'" [position]="'center'" [barebones]="true">
           <div class="form-group">
             <input type="text" class="form-control search" placeholder="Search notes"
@@ -19,7 +19,7 @@
           </div>
         </ui-widget>
       </div>
-      <div *ngIf="!notes">
+      <div *ngIf="notes.length === 0">
         <ui-widget [size]="'small'" [barebones]="true" [position]="'center'">
           <h3>No notes have been posted yet. :(</h3>
         </ui-widget>

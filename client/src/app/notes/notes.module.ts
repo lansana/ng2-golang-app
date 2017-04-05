@@ -14,14 +14,14 @@ const routes: ModuleWithProviders = RouterModule.forChild([
         path: 'notes',
         component: NoteListComponent,
         resolve: {
-            resolved: NoteListResolver
+            notes: NoteListResolver
         }
     },
     {
         path: 'notes/:id',
         component: NoteDetailComponent,
         resolve: {
-            resolved: NoteDetailResolver
+            note: NoteDetailResolver
         }
     }
 ]);

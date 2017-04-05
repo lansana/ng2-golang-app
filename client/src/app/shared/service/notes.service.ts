@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpService } from './http.service';
+import { HttpService, Note } from '../';
 import { environment } from "../../../environments/environment";
 
 import { Observable } from 'rxjs';
@@ -11,11 +11,11 @@ export class NotesService {
 
     constructor(private httpService: HttpService) {}
 
-    getAll(): Observable<any> {
+    getAll(): Observable<Array<Note>> {
         return this.httpService.get(this.url);
     }
 
-    getByID(id: string): Observable<any> {
+    getByID(id: string): Observable<Note> {
         return this.httpService.get(this.url + id);
     }
 
