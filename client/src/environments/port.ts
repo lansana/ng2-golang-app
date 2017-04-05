@@ -4,7 +4,7 @@ export function port () {
 
     // Running dev server, server is hosted on another port
     if (port.indexOf("4200") > -1) {
-        serverPort = ":80"; // Whatever port Go server is running on, or container port
+        serverPort = ":3000"; // Whatever port Go server is running on, or container port
     } else {
         serverPort = ":" + port || "80";
     }
