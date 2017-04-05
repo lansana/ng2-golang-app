@@ -16,6 +16,7 @@ import { ChatRoomComponent } from "./components/pages/chat-room/chat-room.compon
 import { CountComponent } from "./components/pages/count/count.component";
 import { NoteDetailComponent } from "./components/pages/notes/note-detail/note-detail.component";
 import { NoteListComponent } from "./components/pages/notes/note-list/note-list.component";
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 // UI components
 import { NavbarComponent } from './components/ui/navbar/navbar.component';
@@ -61,6 +62,7 @@ import { LimitPipe } from "./shared/pipe/limit/limit.pipe";
     CountComponent,
     NoteDetailComponent,
     NoteListComponent,
+    NotFoundComponent,
 
     // UI components
     AppComponent,
