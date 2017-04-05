@@ -1,0 +1,14 @@
+@import '../../../../assets/sass/partials/colors';
+@import '../../../../assets/sass/partials/mixins';
+
+.paper {
+  @include box-shadow(0 2px 15px lighten($black, 90%));
+  border: 1px solid rgb(245, 245, 245);
+  padding: 20px 0 20px 60px;
+  background: -webkit-linear-gradient(0deg, transparent 40px, lighten($red, 50%) 40px, lighten($red, 50%) 42px, transparent 42px), -webkit-linear-gradient(90deg, #eee .1em, transparent .1em), $white;
+  background: -moz-linear-gradient(90deg, transparent 40px, lighten($red, 50%) 40px, lighten($red, 50%) 42px, transparent 42px), -moz-linear-gradient(0deg, #eee .1em, transparent .1em), $white;
+  background: linear-gradient(90deg, transparent 40px, lighten($red, 50%) 40px, lighten($red, 50%) 42px, transparent 42px), linear-gradient(0deg, #eee .1em, transparent .1em), $white;
+  background-size: 100% 2.5em;
+  display: block;
+  width: 100%;
+}
