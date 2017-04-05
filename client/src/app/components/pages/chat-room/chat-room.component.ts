@@ -57,7 +57,7 @@ export class ChatRoomComponent implements OnInit {
 
   updateOnlineCount(): void {
     this.countService.getCount().subscribe(res => {
-      this.users = res.count;
+      this.users = res.client_count;
       this.usersWord = this.users > 1 ? 'people' : 'person';
     });
   }
