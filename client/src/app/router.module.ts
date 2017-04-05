@@ -6,6 +6,7 @@ import { CountComponent } from "./components/pages/count/count.component";
 import { ChatRoomComponent } from "./components/pages/chat-room/chat-room.component";
 import { NoteListComponent } from "./components/pages/notes/note-list/note-list.component";
 import { NoteDetailComponent } from "./components/pages/notes/note-detail/note-detail.component";
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 import { CountResolver } from './components/pages/count/count.resolver';
 import { NoteListResolver } from './components/pages/notes/note-list/note-list.resolver';
@@ -16,12 +17,11 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   },
-
   {
-    path: 'count',
+    path: 'client-count',
     component: CountComponent,
     resolve: {
-      clients: CountResolver
+      resolved: CountResolver
     }
   },
   {
@@ -41,7 +41,11 @@ const routes: Routes = [
     resolve: {
       resolved: NoteDetailResolver
     }
-  }
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
 ];
 
 @NgModule({
