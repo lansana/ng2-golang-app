@@ -12,8 +12,8 @@ export class CountComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe((data: {clients}) => {
-      this.count = data.clients.count
+    this.route.data.subscribe((data: {resolved}) => {
+      this.count = data.resolved.client_count
     });
   }
 }

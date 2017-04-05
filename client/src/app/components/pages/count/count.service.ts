@@ -10,6 +10,6 @@ export class CountService {
   constructor(private httpService: HttpService) {}
 
   getCount(): Observable<any> {
-    return this.httpService.get(environment.server_url + "/api/client-count");
+    return this.httpService.get(environment.server_url + "/api/count");
   }
 }
