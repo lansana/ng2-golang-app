@@ -48,33 +48,9 @@ export class WebSocketService {
     this.socket.send(data);
   }
 
-  isConnecting(): boolean {
-    if (this.socket instanceof WebSocket) {
-      return this.socket.readyState === 0;
-    }
-
-    return false;
-  }
-
   isConnected(): boolean {
     if (this.socket instanceof WebSocket) {
       return this.socket.readyState === 1;
-    }
-
-    return false;
-  }
-
-  isClosing(): boolean {
-    if (this.socket instanceof WebSocket) {
-      return this.socket.readyState === 2
-    }
-
-    return false;
-  }
-
-  isClosed(): boolean {
-    if (this.socket instanceof WebSocket) {
-      return this.socket.readyState === 3;
     }
 
     return false;
