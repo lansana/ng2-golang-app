@@ -14,6 +14,7 @@ var routes map[string]bool = map[string]bool{
 	"/attack": true,
 	"/chat-room": true,
 	"/count": true,
+	"/notes": true,
 }
 
 func main() {
@@ -38,6 +39,11 @@ func main() {
 	r.LoadHTMLFiles("client/dist/index.html")
 
 	// API routes
+	r.GET("/api/note", controller.NoteList)
+	r.POST("/api/note", controller.CreateNote)
+	r.GET("/api/note/:id", controller.GetNote)
+	r.PUT("/api/note/:id", controller.EditNote)
+	r.DELETE("/api/note/:id", controller.DeleteNote)
 	r.GET("/api/count", func(c *gin.Context) {
 		controller.Count(c, hub)
 	})
@@ -55,8 +61,7 @@ func main() {
 func clientCORS() gin.HandlerFunc {
 	return cors.New(cors.Config{
 		AllowAllOrigins: true,
-		AllowMethods: []string{"POST", "GET"},
-		AllowHeaders: []string{"Content-Type"},
+		AllowMethods: []string{"POST", "GET", "PUT", "DELETE"},
 	})
 }
 
