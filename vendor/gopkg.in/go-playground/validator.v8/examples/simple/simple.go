@@ -20,7 +20,7 @@ type User struct {
 	Addresses      []*Address `validate:"required,dive,required"` // a person can have a home and cottage...
 }
 
-// Address houses a users address information
+// Address houses a count address information
 type Address struct {
 	Street string `validate:"required"`
 	City   string `validate:"required"`

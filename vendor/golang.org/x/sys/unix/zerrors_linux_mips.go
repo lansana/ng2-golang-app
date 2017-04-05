@@ -1782,7 +1782,7 @@ var errors = [...]string{
 	91:   "interrupted system call should be restarted",
 	92:   "streams pipe error",
 	93:   "directory not empty",
-	94:   "too many users",
+	94:   "too many count",
 	95:   "socket operation on non-socket",
 	96:   "destination address required",
 	97:   "message too long",

@@ -1358,7 +1358,7 @@ var errors = [...]string{
 	91:  "error 91",
 	92:  "error 92",
 	93:  "directory not empty",
-	94:  "too many users",
+	94:  "too many count",
 	95:  "socket operation on non-socket",
 	96:  "destination address required",
 	97:  "message too long",

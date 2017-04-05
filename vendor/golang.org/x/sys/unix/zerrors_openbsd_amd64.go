@@ -1520,7 +1520,7 @@ var errors = [...]string{
 	65: "no route to host",
 	66: "directory not empty",
 	67: "too many processes",
-	68: "too many users",
+	68: "too many count",
 	69: "disc quota exceeded",
 	70: "stale NFS file handle",
 	71: "too many levels of remote in path",

@@ -30,7 +30,7 @@ func main() {
 	r.GET("/api/note/:id", controller.GetNote)
 	r.PUT("/api/note/:id", controller.EditNote)
 	r.DELETE("/api/note/:id", controller.DeleteNote)
-	r.GET("/api/count", func(c *gin.Context) {
+	r.GET("/api/client-count", func(c *gin.Context) {
 		controller.Count(c, hub)
 	})
 

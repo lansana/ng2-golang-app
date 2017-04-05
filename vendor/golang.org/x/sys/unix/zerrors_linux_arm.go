@@ -1730,7 +1730,7 @@ var errors = [...]string{
 	84:  "invalid or incomplete multibyte or wide character",
 	85:  "interrupted system call should be restarted",
 	86:  "streams pipe error",
-	87:  "too many users",
+	87:  "too many count",
 	88:  "socket operation on non-socket",
 	89:  "destination address required",
 	90:  "message too long",
