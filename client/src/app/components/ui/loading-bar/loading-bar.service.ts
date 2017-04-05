@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LoadingBarService {
-  interval: number = 100;
+  interval: number = 20;
   progress: number = 0;
   show: boolean = false;
   progressUpdateFn: Function = null;

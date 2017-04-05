@@ -20,6 +20,17 @@ export class HttpService {
 
   constructor(private http: Http, private loadingBarService: LoadingBarService) {}
 
+  get(url: string, options?: RequestOptionsArgs): Observable<any> {
+    this.loadingBarService.start();
+
+    return this.http.get(url, options || this.options)
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json()))
+      .finally(() => {
+        this.loadingBarService.complete();
+      });
+  }
+
   post(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     this.loadingBarService.start();
 
@@ -31,10 +42,21 @@ export class HttpService {
       });
   }
 
-  get(url: string, options?: RequestOptionsArgs): Observable<any> {
+  put(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     this.loadingBarService.start();
 
-    return this.http.get(url, options || this.options)
+    return this.http.put(url, JSON.stringify(body), options || this.options)
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json()))
+      .finally(() => {
+        this.loadingBarService.complete();
+      });
+  }
+
+  del(url: string, options?: RequestOptionsArgs): Observable<any> {
+    this.loadingBarService.start();
+
+    return this.http.delete(url, options || this.options)
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error.json()))
       .finally(() => {

@@ -18,7 +18,7 @@
     color: $dark-blue;
     font-weight: 700;
 
-    &:hover, &:active, &.active {
+    &:hover, &:active, &:focus, &.active {
       color: $blue;
     }
   }

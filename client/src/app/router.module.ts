@@ -4,8 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
 import { CountComponent } from "./components/pages/count/count.component";
 import { ChatRoomComponent } from "./components/pages/chat-room/chat-room.component";
+import { NoteListComponent } from "./components/pages/notes/note-list/note-list.component";
+import { NoteDetailComponent } from "./components/pages/notes/note-detail/note-detail.component";
 
 import { CountResolver } from './components/pages/count/count.resolver';
+import { NoteListResolver } from './components/pages/notes/note-list/note-list.resolver';
+import { NoteDetailResolver } from "./components/pages/notes/note-detail/note-detail.resolver";
 
 const routes: Routes = [
   {
@@ -24,6 +28,20 @@ const routes: Routes = [
     path: 'chat-room',
     component: ChatRoomComponent
   },
+  {
+    path: 'notes',
+    component: NoteListComponent,
+    resolve: {
+      resolved: NoteListResolver
+    }
+  },
+  {
+    path: 'notes/:id',
+    component: NoteDetailComponent,
+    resolve: {
+      resolved: NoteDetailResolver
+    }
+  }
 ];
 
 @NgModule({
