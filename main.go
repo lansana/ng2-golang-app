@@ -7,16 +7,6 @@ import (
 	"angular2-golang-chat-room/lib/websocket"
 )
 
-// A map containing the routes that should be routed to index.html for
-// Angular2 to handle.
-var routes map[string]bool = map[string]bool{
-	"/": true,
-	"/attack": true,
-	"/chat-room": true,
-	"/count": true,
-	"/notes": true,
-}
-
 func main() {
 	// New router engine
 	r := gin.New()
@@ -28,15 +18,11 @@ func main() {
 	go hub.Run()
 
 	// Middleware
-	r.Use(clientCORS())
-	r.Use(clientRoutes())
+	r.Use(CORS())
 
 	// Serve status files
 	r.Static("/client/dist", "./client/dist")
 	r.Static("/assets", "./client/dist/assets")
-
-	// Load index.html
-	r.LoadHTMLFiles("client/dist/index.html")
 
 	// API routes
 	r.GET("/api/note", controller.NoteList)
@@ -53,23 +39,19 @@ func main() {
 		websocket.ServeWs(hub, c.Writer, c.Request)
 	})
 
+	// Serve angular routes
+	r.NoRoute(func(c *gin.Context) {
+		c.File("./client/dist/index.html")
+	})
+
 	// Run on port 80
 	r.Run(":3000")
 }
 
 // Set up CORS to allow cross-origin requests
-func clientCORS() gin.HandlerFunc {
+func CORS() gin.HandlerFunc {
 	return cors.New(cors.Config{
 		AllowAllOrigins: true,
 		AllowMethods: []string{"POST", "GET", "PUT", "DELETE"},
 	})
-}
-
-// Set up client routes middleware
-func clientRoutes() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		if routes[c.Request.URL.Path] {
-			c.HTML(200, "index.html", nil)
-		}
-	}
 }
