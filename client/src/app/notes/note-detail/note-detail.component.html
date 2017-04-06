@@ -1,21 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <ui-widget [size]="'medium'" [barebones]="true" [position]="'center'">
-        <div *ngIf="note">
-          <ui-paper>
-            <div class="title">
-              {{note.title}}
-            </div>
-            <div class="description">
-              {{note.description}}
-            </div>
-          </ui-paper>
-        </div>
-        <div *ngIf="!note">
-          <h3>The note you requested could not be found.</h3>
-        </div>
-      </ui-widget>
+<div *ngIf="note">
+  <ui-paper>
+    <div class="title">
+      {{note.title}}
     </div>
+    <div class="description">
+      {{note.description}}
+    </div>
+  </ui-paper>
+
+  <div class="actions">
+    <button class="btn btn-primary btn-primary--inverse btn-sm" (click)="edit()">
+      Edit
+    </button>
+    <button class="btn btn-primary btn-sm" (click)="remove()">
+      Delete
+    </button>
   </div>
+</div>
+
+<div *ngIf="!note">
+  <h3>The note you requested could not be found.</h3>
 </div>

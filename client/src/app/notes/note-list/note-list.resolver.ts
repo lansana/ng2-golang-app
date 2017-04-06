@@ -6,10 +6,10 @@ import { NotesService, Note } from '../../shared';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class NoteListResolver implements Resolve<Observable<Array<Note>>> {
+export class NoteListResolver implements Resolve<Observable<Note[]>> {
     constructor(private notesService: NotesService) {}
 
-    resolve(): Observable<Array<Note>> {
+    resolve(): Observable<Note[]> {
         return this.notesService.getAll();
     }
 }

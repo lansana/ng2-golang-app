@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WebSocketService, NotificationService, ClientCountService } from '../shared';
+import { WebSocketService, NotificationService, ClientCountService, Client } from '../shared';
 
 @Component({
     selector: 'chat-room',
@@ -54,8 +54,8 @@ export class ChatRoomComponent implements OnInit {
     }
 
     updateOnlineCount(): void {
-        this.countService.getCount().subscribe(res => {
-            this.users = res.client_count;
+        this.countService.getCount().subscribe((res: Client) => {
+            this.users = res.count;
             this.usersWord = this.users > 1 ? 'people' : 'person';
         });
     }

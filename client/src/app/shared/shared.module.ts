@@ -21,12 +21,16 @@ import { LoadingBarService } from "./service/loading-bar.service";
 import { FilterScriptsPipe } from "./pipe/filter/filter-scripts.pipe";
 import { LimitPipe } from "./pipe/limit/limit.pipe";
 
+// Third party
+import { Ng2PageTransitionModule } from 'ng2-page-transition';
+
 @NgModule({
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        Ng2PageTransitionModule
     ],
     declarations: [
         // Components
@@ -48,6 +52,7 @@ import { LimitPipe } from "./pipe/limit/limit.pipe";
         HttpModule,
         FormsModule,
         RouterModule,
+        Ng2PageTransitionModule,
 
         // Components
         ChatBubbleComponent,

@@ -1,5 +1,5 @@
 {
-  "name": "melanin-monroe",
+  "name": "angular2-golang-chat-room",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,9 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
+    "ng2-page-transition": "^1.0.4",
     "rxjs": "^5.1.0",
+    "web-animations-js": "^2.2.2",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {

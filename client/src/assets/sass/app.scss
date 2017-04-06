@@ -12,6 +12,7 @@ body {
   padding-top: 50px;
   background-color: lighten($light-gray, 2.75%);
   color: $dark-blue;
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6, p, strong, small, span, label {
@@ -57,4 +58,16 @@ a {
 label > input {
   position: relative;
   top: 2px;
+}
+
+app-root *,
+app-root {
+  router-outlet {
+    & + * {
+      @include animation-name(viewFadeIn);
+      @include animation-duration(2s);
+      @include animation-timing-function(ease-in-out);
+      visibility: visible !important;
+    }
+  }
 }

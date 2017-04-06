@@ -1,0 +1,17 @@
+<h4 *ngIf="isEditing">Edit {{note.title ? note.title : 'note'}}</h4>
+<h4 *ngIf="!isEditing">Create note</h4>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <div class="form-group">
+    <label for="title">Title *</label>
+    <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="model.title" #title="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="description">Description *</label>
+    <textarea class="form-control" name="description" id="description" required
+              [(ngModel)]="model.description" #description="ngModel" rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-primary--inverse" [disabled]="!form.valid">
+    <div *ngIf="isEditing">Update note</div>
+    <div *ngIf="!isEditing">Create note</div>
+  </button>
+</form>

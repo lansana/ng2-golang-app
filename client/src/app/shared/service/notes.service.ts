@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { HttpService, Note } from '../';
+import { Note, HttpService } from '../';
 import { environment } from "../../../environments/environment";
 
 import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class NotesService {
@@ -11,20 +12,20 @@ export class NotesService {
 
     constructor(private httpService: HttpService) {}
 
-    getAll(): Observable<Array<Note>> {
-        return this.httpService.get(this.url);
+    getAll(): Observable<Note[]> {
+        return this.httpService.get(this.url).map(res => res.notes);
     }
 
     getByID(id: string): Observable<Note> {
-        return this.httpService.get(this.url + id);
+        return this.httpService.get(this.url + id).map(res => res.note);
     }
 
     create(data: any): Observable<any> {
         return this.httpService.post(this.url, data);
     }
 
-    editByID(id: string, data: any): Observable<any> {
-        return this.httpService.put(this.url + id, data);
+    editByID(id: string, note: Note): Observable<any> {
+        return this.httpService.put(this.url + id, note);
     }
 
     deleteById(id: string): Observable<any> {

@@ -9,15 +9,15 @@ import { Note } from '../../shared';
     styleUrls: ['./note-list.component.scss']
 })
 export class NoteListComponent implements OnInit {
-    notes: Array<Note>;
-    notesMemo: Array<Note>;
+    notes: Note[];
+    notesMemo: Note[];
     search: string;
 
     constructor(private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.route.data.subscribe((data: {notes: Array<Note>}) => {
-            this.notes = data.notes;
+        this.route.data.subscribe((data: {notes: Note[]}) => {
+            this.notes = data.notes ? data.notes.reverse() : null;
             this.notesMemo = this.notes;
         })
     }

@@ -1,0 +1,40 @@
+@import '../../../assets/sass/partials/colors';
+@import '../../../assets/sass/partials/mixins';
+
+.sidebar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+
+  li {
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+      a {
+        color: darken($dark-blue, 25%);
+      }
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      padding: 5px 10px;
+      color: $dark-blue;
+
+      &.active {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 600px;
+  display: block;
+  margin: auto;
+}

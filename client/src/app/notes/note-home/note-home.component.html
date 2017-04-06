@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ui-widget [size]="'medium'" [position]="'center'">
+        <div class="row">
+          <div class="col-sm-4">
+            <ul class="sidebar">
+              <li>
+                <a [routerLink]="['/notes']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" (click)="setTitle('Notes')">
+                  View all
+                </a>
+              </li>
+              <li>
+                <a [routerLink]="['/notes/create']" [routerLinkActive]="'active'" (click)="setTitle('Create Note')">
+                  Create new note
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </ui-widget>
+    </div>
+  </div>
+</div>
