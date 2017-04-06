@@ -4,6 +4,7 @@ import (
 	"errors"
 	"sync"
 	"strconv"
+	"fmt"
 )
 
 const (
@@ -31,9 +32,9 @@ func GetNotes() []Note {
 
 // GetNoteByID gets a note by id
 func GetNoteByID(id string) (*Note, error) {
-	for _, n := range notes {
-		if n.ID == id {
-			return &n, nil
+	for i, _ := range notes {
+		if notes[i].ID == id {
+			return &notes[i], nil
 		}
 	}
 
