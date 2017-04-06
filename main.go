@@ -45,7 +45,7 @@ func main() {
 	})
 
 	// Run on port 80
-	r.Run(":3000")
+	r.Run(":80")
 }
 
 // Set up CORS to allow cross-origin requests
