@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-    selector: 'note-home',
-    templateUrl: './note-home.component.html',
-    styleUrls: ['./note-home.component.scss']
+    selector: 'notes',
+    templateUrl: './notes.component.html',
+    styleUrls: ['./notes.component.scss']
 })
-export class NoteHomeComponent {
+export class NotesComponent {
   constructor(private titleService: Title) {}
 
   setTitle(title: string): void {

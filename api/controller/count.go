@@ -12,6 +12,6 @@ func Count(c *gin.Context, hub *websocket.Hub) {
 	time.Sleep(500 * time.Millisecond)
 	c.JSON(200, gin.H{
 		"success": true,
-		"client_count": len(hub.Clients),
+		"count": len(hub.Clients),
 	})
 }
