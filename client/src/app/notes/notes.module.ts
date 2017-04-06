@@ -4,45 +4,50 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { SharedModule } from "../shared/shared.module";
 
-import { NoteHomeComponent } from './note-home/note-home.component';
+import { NotesComponent } from './notes.component';
 import { NoteDetailComponent } from './note-detail/note-detail.component';
 import { NoteListComponent } from './note-list/note-list.component';
-import { NoteModifyComponent } from './note-modify/note-modify.component';
+import { NoteCreateComponent } from './note-create/note-create.component';
+import { NoteEditComponent } from './note-edit/note-edit.component';
 
-import { NoteDetailResolver } from './note-detail/note-detail.resolver';
 import { NoteListResolver } from './note-list/note-list.resolver';
-import { NoteModifyResolver } from './note-modify/note-modify.resolver';
+import { NoteResolver } from './shared/note.resolver';
 
 const notesRoutes: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'notes',
-        component: NoteHomeComponent,
+        component: NotesComponent,
         children: [
-          {
-            path: '',
-            component: NoteListComponent,
-            resolve: {
-              notes: NoteListResolver
+            {
+                path: '',
+                component: NoteListComponent,
+                resolve: {
+                    notes: NoteListResolver
+                }
+            },
+            {
+                path: 'create',
+                component: NoteCreateComponent
+            },
+            {
+                path: ':id',
+                children: [
+                    {
+                        path: 'edit',
+                        component: NoteEditComponent,
+                        resolve: {
+                            note: NoteResolver
+                        }
+                    },
+                    {
+                        path: 'detail',
+                        component: NoteDetailComponent,
+                        resolve: {
+                            note: NoteResolver
+                        }
+                    }
+                ]
             }
-          },
-          {
-            path: 'create',
-            component: NoteModifyComponent
-          },
-          {
-            path: 'edit/:id',
-            component: NoteModifyComponent,
-            resolve: {
-              note: NoteModifyResolver
-            }
-          },
-          {
-            path: ':id',
-            component: NoteDetailComponent,
-            resolve: {
-              note: NoteDetailResolver
-            }
-          }
         ]
     }
 ]);
@@ -56,13 +61,13 @@ const notesRoutes: ModuleWithProviders = RouterModule.forChild([
     declarations: [
         NoteDetailComponent,
         NoteListComponent,
-        NoteModifyComponent,
-        NoteHomeComponent
+        NoteCreateComponent,
+        NotesComponent,
+        NoteEditComponent
     ],
     providers: [
-        NoteDetailResolver,
         NoteListResolver,
-        NoteModifyResolver
+        NoteResolver
     ]
 })
 export class NotesModule {}

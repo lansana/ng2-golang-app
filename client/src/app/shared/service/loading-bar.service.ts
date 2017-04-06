@@ -3,14 +3,24 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoadingBarService {
     interval: number = 25;
+    timer: any;
     progress: number = 0;
     show: boolean = false;
     progressUpdateFn: Function = null;
 
+    private stop(): void {
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
+        }
+    }
+
     start(): void {
-        let interval = setInterval(() => {
+        this.stop();
+
+        this.timer = setInterval(() => {
             if (this.progress === 100) {
-                return clearInterval(interval);
+                this.complete()
             }
 
             if (this.progress <= 60) {
@@ -28,6 +38,7 @@ export class LoadingBarService {
     complete(): void {
         this.progress = 100;
         this.emitChange();
+        this.stop();
 
         setTimeout(() => {
             this.show = false;

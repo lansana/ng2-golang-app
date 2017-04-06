@@ -1,15 +1,22 @@
-<h4>Edit {{note.title}}</h4>
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div class="form-group">
-    <label for="title">Title *</label>
-    <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="model.title" #title="ngModel">
-  </div>
-  <div class="form-group">
-    <label for="description">Description *</label>
-    <textarea class="form-control" name="description" id="description" required
-              [(ngModel)]="model.description" #description="ngModel" rows="5"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary btn-primary--inverse" [disabled]="!form.valid">
-    Update note
-  </button>
-</form>
+<div *ngIf="note">
+  <h4>Edit {{note.title}}</h4>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-group">
+      <label for="title">Title *</label>
+      <input type="text" class="form-control" name="title" id="title" required
+             [(ngModel)]="model.title" #title="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="description">Description *</label>
+      <textarea class="form-control" name="description" id="description" required
+                [(ngModel)]="model.description" #description="ngModel" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-primary--inverse" [disabled]="!form.valid">
+      Update note
+    </button>
+  </form>
+</div>
+
+<div *ngIf="!note">
+  <h4>The requested note does not exist.</h4>
+</div>

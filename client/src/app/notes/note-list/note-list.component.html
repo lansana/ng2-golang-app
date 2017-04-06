@@ -3,7 +3,7 @@
     <input type="text" class="form-control search" placeholder="Search notes"
            [(ngModel)]="search" (ngModelChange)="onChange($event)">
   </div>
-  <div *ngFor="let note of notes" class="note" [routerLink]="['/notes', note.id]">
+  <div *ngFor="let note of notes" class="note" [routerLink]="['/notes', note.id, 'detail']">
     <ui-paper>
       <div class="title">
         {{note.title}}
@@ -13,7 +13,10 @@
       </div>
     </ui-paper>
   </div>
+  <div *ngIf="notes.length === 0" class="text-center">
+    <p>No results found for the search term '{{search}}'.</p>
+  </div>
 </div>
 <div *ngIf="!notes" class="text-center">
-  <h4>No notes have been posted yet! :(</h4>
+  <h5>No notes have been created yet :(</h5>
 </div>

@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Note } from '../../shared';
 
 @Component({
-    selector: 'notes',
+    selector: 'note-list',
     templateUrl: './note-list.component.html',
     styleUrls: ['./note-list.component.scss']
 })

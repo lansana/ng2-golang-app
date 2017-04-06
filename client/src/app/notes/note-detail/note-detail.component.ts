@@ -23,7 +23,7 @@ export class NoteDetailComponent implements OnInit {
     }
 
     edit(): void {
-      this.router.navigateByUrl('/notes/edit/' + this.note.id);
+      this.router.navigateByUrl(`/notes/${this.note.id}/edit`);
     }
 
     remove(): void {

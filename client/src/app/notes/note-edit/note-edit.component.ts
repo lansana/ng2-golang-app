@@ -23,6 +23,7 @@ export class NoteEditComponent implements OnInit {
     ngOnInit(): void {
         this.route.data.subscribe((data: {note: Note}) => {
             this.note = data.note;
+            this.model = this.note;
         });
     }
 
