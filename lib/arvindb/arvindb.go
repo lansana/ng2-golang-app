@@ -4,6 +4,7 @@ import (
 	"errors"
 	"sync"
 	"strconv"
+	"time"
 )
 
 const (
@@ -26,11 +27,15 @@ type Note struct {
 
 // GetNotes gets all notes
 func GetNotes() []Note {
+	time.Sleep(50 * time.Millisecond)
+
 	return notes
 }
 
 // GetNoteByID gets a note by id
 func GetNoteByID(id string) (*Note, error) {
+	time.Sleep(50 * time.Millisecond)
+
 	for i, _ := range notes {
 		if notes[i].ID == id {
 			return &notes[i], nil
@@ -42,6 +47,8 @@ func GetNoteByID(id string) (*Note, error) {
 
 // CreateNote create a note
 func CreateNote(n Note) error {
+	time.Sleep(50 * time.Millisecond)
+
 	nextNoteIDMu.Lock()
 	defer nextNoteIDMu.Unlock()
 
@@ -60,6 +67,8 @@ func CreateNote(n Note) error {
 
 // EditNoteByID edits a note by id
 func EditNoteByID(id string, newNote Note) error {
+	time.Sleep(50 * time.Millisecond)
+
 	note, err := GetNoteByID(id)
 	if err != nil {
 		return err
@@ -73,6 +82,8 @@ func EditNoteByID(id string, newNote Note) error {
 
 // DeleteNoteByID deletes a note by id
 func DeleteNoteByID(id string) error {
+	time.Sleep(50 * time.Millisecond)
+
 	note, err := GetNoteByID(id)
 	if err != nil {
 		return err
@@ -91,6 +102,8 @@ func DeleteNoteByID(id string) error {
 
 // getNotesNotIncluding gets all notes excluding a note with a given id
 func getNotesNotIncluding(id string) ([]Note, error) {
+	time.Sleep(50 * time.Millisecond)
+
 	var newNotes []Note
 	for _, note := range notes {
 		if note.ID != id {
