@@ -5,13 +5,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"fmt"
-	"time"
 )
 
 // NoteList gets a list of all notes
 func NoteList(c *gin.Context) {
-	time.Sleep(500 * time.Millisecond)
-
 	notes := arvindb.GetNotes()
 	c.JSON(http.StatusOK, gin.H{
 		"status": http.StatusOK,
@@ -22,8 +19,6 @@ func NoteList(c *gin.Context) {
 
 // GetNote gets a note by id
 func GetNote(c *gin.Context) {
-	time.Sleep(500 * time.Millisecond)
-
 	note, err := arvindb.GetNoteByID(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
@@ -43,8 +38,6 @@ func GetNote(c *gin.Context) {
 
 // CreateNote creates a note
 func CreateNote(c *gin.Context) {
-	time.Sleep(500 * time.Millisecond)
-
 	var note arvindb.Note
 	if err := c.BindJSON(&note); err != nil {
 		fmt.Println(err)
@@ -69,8 +62,6 @@ func CreateNote(c *gin.Context) {
 
 // EditNote edits a note by id
 func EditNote(c *gin.Context) {
-	time.Sleep(500 * time.Millisecond)
-
 	var newNote arvindb.Note
 	if err := c.BindJSON(&newNote); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -100,8 +91,6 @@ func EditNote(c *gin.Context) {
 
 // DeleteNote deletes a note by id
 func DeleteNote(c *gin.Context) {
-	time.Sleep(500 * time.Millisecond)
-
 	err := arvindb.DeleteNoteByID(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
