@@ -21,9 +21,7 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
-    "ng2-page-transition": "^1.0.4",
     "rxjs": "^5.1.0",
-    "web-animations-js": "^2.2.2",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
@@ -43,6 +41,6 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
-    "typescript": "~2.0.0"
+    "typescript": "~2.1.5"
   }
 }
