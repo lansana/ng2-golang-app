@@ -9,10 +9,10 @@ DOCKER_COMPOSE_FILE="docker-compose.yml"
 docker build -t angular2-golang-chat-room .
 
 # Tag AWS ECR repo
-docker tag angular2-golang-chat-room ***REMOVED***.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
+docker tag angular2-golang-chat-room REDACTED.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
 
 # Push to ECR
-docker push ***REMOVED***.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
+docker push REDACTED.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
 
 # Update stack on Rancher
 rancher --env ${RANCHER_ENV} up -d \

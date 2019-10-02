@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    image: ***REMOVED***.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
+    image: REDACTED.dkr.ecr.us-east-1.amazonaws.com/angular2-golang-chat-room:latest
     labels:
       io.rancher.container.pull_image: always
     tty: true
